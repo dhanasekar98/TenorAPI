@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import 'antd/dist/antd.css';
+import Header from './Components/Header';
+import SearchContainer from './Components/Search';
+import React ,{ useState} from 'react';
 
 function App() {
+  const [text,setText] = useState('');
+  const handleChange = (event) => {
+    const { name ,value } = event.target;
+    setText(value);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+      <SearchContainer/>
     </div>
   );
 }

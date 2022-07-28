@@ -1,38 +1,310 @@
-.App {
-  text-align: center;
+.container {
+  width: 100%;
+  height: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
+.title {
+  color:#007add;
+  padding-left: 20px;
+}
+
+.search-row {
+  background-color: #0ad;
+  width: 100%;
+  height: 75px;
+}
+
+.search-col {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+ margin: 15px; 
+}
+.search-box {
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 3px;
+  color:#171717;
+  width: 100%;
+  margin:0;
+  font-size:16px;
+  box-shadow: 0 2px 2px 0 #000, 0 0 1px 0 #000;
+  border:none;
+  height: 50px;
+}
+
+.search-icon {
+  cursor: pointer;
+  padding: 17px;
+  position: absolute;
+  right:0px;
+}
+
+.Carousel {
+  position: relative;
+}
+
+.Carousel.tags .carousel-container {
+  height: 160px;
+  margin-bottom: 0!important;
+  margin: 0 -10px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 1px;
+  white-space: nowrap;
+}
+
+.Carousel.tags .carousel-container .frames-container {
+  position: absolute;
+  transition: left .3s linear;
+  width: 100%;
+}
+
+.TrendsTag {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    text-decoration: none;
+    vertical-align: top;
+    width: calc(20% - 20px);
+}
+
+.TrendsTag .img {
+  background-color: grey;
+  background-position: 50%;
+  background-size: cover;
+  border-radius: -18px;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,.05),0 2px 4px 0 rgba(0,0,0,.08);
+  height: 90px;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.TrendsTag .info {
+  overflow: hidden;
+  padding-top: 5px;
+}
+
+
+.TrendsTag .info .searchterm {
+  color: #000;
+  font-family: Inter,helvetica,arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Carousel.tags .scroll-button.next-button {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  right: -35px;
+}
+
+.Carousel.tags .scroll-button {
+  cursor: pointer;
+  height: 50px;
+  line-height: 50px;
+  opacity: .3;
+  position: absolute;
+  text-align: center;
+  top: 35px;
+  width: 30px;
+}
+
+.Carousel.tags .scroll-button.prev-button {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  left: -35px;
+}
+
+.gif-list {
+  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: -20px -10px!important;
+    position: relative;
+}
+.gif-list-item:hover  {
+  box-shadow: 0 0 20px 0 rgba(207, 35, 35, 0.08);
+  transform: scale(1.05);
+  transition: .5s; 
+}
+.gif-list-item:hover + .tags {
+  display: block;
+  list-style: none;
+  font-size: large;
+}
+
+.gif-list-item:hover + .overlay{
+  display: block;
+}
+.gif-list .column {
+   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    top: 0;
+}
+.gif-list-item {
+  border-radius: 5px;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 5%), 0 2px 4px 0 rgb(0 0 0 / 8%);
+    cursor: pointer;
+    margin: 20px 10px;
+    width:273px;
+    height:250px;
+
+}
+
+.gif-list-item .actions {
+  display: none;
+  left: 5px;
+  position: absolute;
+  top: 5px;
+}
+
+.gif-list-item .actions .FavButton {
+  font-size: 15px;
+  height: 30px;
+  line-height: 30px!important;
+  width: 30px;
+}
+
+.gif img {
+width:273px;
+height:250px;
+border-radius: 8px;
+overflow: hidden;
+}
+
+.FavButton {
+  background-color: #171717;
+  background-image: url('https://tenor.com/assets/icons/fav-heart/heart-off-icon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px 0 rgb(83 83 92 / 11%), 0 1px 3px 0 rgb(0 0 0 / 8%);
+  color: #d0d0d0;
+  cursor: pointer;
+  display: inline-block;
+  flex-shrink: 0;
+  height: 40px;
+  line-height: 40px!important;
+  margin: 5px;
+  text-align: center;
+  width: 40px;
+}
+
+.gif-list-item .tags {
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 50%, rgba(0,0,0,0.25) 99%);
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gif-list-item:hover, .gif-list-item:focus{
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.08);
 }
+.gif-list-item:active {
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.05);
+  }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  .FavButton::after {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    z-index: -1;
+}
+.stickers {
   display: flex;
+  flex-direction: row;
+}
+
+ .buttons {
+  border-radius: 5px;
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 5%), 0 2px 4px 0 rgb(0 0 0 / 8%);
+  display: flex;
+  flex: none;
   flex-direction: column;
+  height: 182px;
+  margin-left: 10px;
+  width: 100px;
+}
+
+.Carousel.stickers .carousel-container {
+  height: 200px;
+  margin-bottom: 0!important;
+  margin: 0 0 0 -10px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.Carousel.stickers .buttons .scroll-button {
   align-items: center;
+  border-radius: 5px;
+  display: flex;
+  height: 50%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.list-unstyled {
+  list-style: none;
+  color:#fff;
+}
+.gif-list-item .tags li {
+  display: inline-block;
+  list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.frames-container {
+  transition: .8s ease-in-out;
 }
+
+.gif-list-item .tags a {
+  color: #fff;
+  display: inline-block;
+  font-family: Inter,helvetica,arial,sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  max-width: 100%;
+  overflow: hidden;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  pointer-events: auto;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 1px #000;
+  vertical-align: bottom;
+  width: auto;
+}
+.gif-list-item .tags a:hover {
+  color:#fff;
+}
+.gif-list-item .tags:hover {
+  display: flex;
+}
+
