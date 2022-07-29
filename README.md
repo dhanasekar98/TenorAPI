@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with React App
 
 In the project directory, you install the node modules:
 
